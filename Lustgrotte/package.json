@@ -1,0 +1,10 @@
+{
+  "name": "Lustgrotte",
+  "version": "0.0.0",
+  "description": "Lustgrotte",
+  "main": "server.js",
+  "author": {
+    "name": "Ernie",
+    "email": ""
+  }
+}
