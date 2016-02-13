@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lustgrotte WebUI</title>
+    <script src="/jquery/jquery.js"></script>
+	<link href="/winjs 4/css/ui-light.css" rel="stylesheet" />
+    <script src="/winjs 4/js/base.js"></script>
+    <script src="/winjs 4/js/ui.js"></script>
+	<link type="text/css" href="/css/default.css" rel="stylesheet" />
+	<!--link type="text/css" href="/css/Smartphone.css" rel="stylesheet" media="screen and (max-width: 1079px)"/-->
+    <script src="/js/default.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="icon" sizes="32x32" type="image/png" href="/images/Favicon/wdLogo.png">
+	
+	<link href="/Bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<script src="/Bootstrap/js/bootstrap.js"></script>
+	<link href="/css/TestBlank.css" rel="stylesheet" />
+</head>
+<body onload="ladeStandart()">   
+<div id="app">
+         <div class="container">
+<div class="row">
+<header id="headerclass" class="col-hd-12">
+<h1 id="startbildschirm" style="color:white">Lustgrotten WebUI</h1>
+<p style="color:white">Informationen und Steuerung</p>
+<hr>
+</header> 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="">Lustgrotte</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a onclick="seitenumschaltung(1)">Home</a></li>
+        <li><a onclick="seitenumschaltung(2)">Bier</a></li>
+        <li><a onclick="seitenumschaltung(3)">Neu</a></li>
+        <li><a onclick="seitenumschaltung(4)">Rest</a></li>
+      </ul>    
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div> 
+<article class="articleclass">
+<div id="wrapper"><div id="fragmentsWithControlsDiv"></div>	
+</div>
+</article>
+<footer class="footerclass" class="col-hd-12">
+<p>&copy; Karsten Ernert | <a href="iisstart.htm">Startseite</a></p>
+</footer>
+</div>
+</div>
+		
+		
+		
+	<!--/div--> 
+</div>
+ 
+</body>
+</html>
