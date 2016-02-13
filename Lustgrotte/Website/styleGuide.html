@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lokaler IIS: Testsite</title>
+	<link rel="stylesheet" href="/FontAwesome/css/font-awesome.min.css">
+	
+	<link href="/winjs 4/css/ui-light.css" rel="stylesheet" />    
+	<script src="/winjs 4/js/base.js"></script>
+    <script src="/winjs 4/js/ui.js"></script>
+	<link type="text/css" href="/css/styleGuide_mobile.css" rel="stylesheet" media="screen and (max-width: 1279px) and (orientation: portrait)"/>
+	<link type="text/css" href="/css/styleGuide.css" rel="stylesheet" media="screen and (max-width: 1279px) and (orientation: landscape)"/>
+	<link type="text/css" href="/css/styleGuide_desktop.css" rel="stylesheet" media="screen and (min-width: 1280px)"/>
+	<script src="/js/styleGuide.js"></script>
+	<script type="text/javascript">
+
+//alert("Screen: "+screen.width + "x" + screen.height+"  Available: "+screen.availWidth+"x"+screen.availHeight);
+  </script>
+	<link rel="icon" sizes="32x32" type="image/png" href="/images/Favicon/wdLogo.png">	
+	</head>
+<!--UML Sequenzen 1280x800-->
+<body>
+	<div id="wrapper">
+		<nav class="navclass">
+<!-------------------------------------------------NAV Links---------------------------------------------->
+				<div class="navlinks">
+				<button class="win-button navbutton parallelogram active" id="homebutton" icon="win-home" onclick="onhomebuttonpressed()">
+				<div class="buttontext" id="erstertext">
+				
+				<i class="fa fa-home fa-lg"></i>
+				
+				</div>
+				</button>				
+				<button class="win-button navbutton parallelogram"  id="firstbutton" icon="win-home" onclick="onfirstbuttonpressed()">
+				<div class="buttontext">
+				
+				<i class="fa fa-area-chart fa-lg"></i>
+				
+				</div>
+				</button>
+				<button class="win-button navbutton parallelogram" id="secondbutton" icon="win-home" onclick="onsecondbuttonpressed()">
+				<div class="buttontext">
+				
+				<i class="fa fa-bar-chart fa-lg"></i>
+				
+				</div>
+				</button>
+				<button class="win-button navbutton parallelogram" id="zusatzbutton" icon="win-home" onclick="onzusatzbuttonpressed()">
+				<div class="buttontext">
+				
+				<i class="fa fa-pie-chart fa-fg"></i>
+				
+				
+				</div>
+				</button>
+				<select class="win-dropdown" id="sprachdropdown" onchange="sprachwahl()">
+					<option selected="selected" value="Englisch">Englisch</option>
+					<option value="Deutsch">Deutsch</option>
+					<option value="Spanisch">Websocket</option>
+				</select>
+				</div>
+<!-------------------------------------------------Sprachumschaltung---------------------------------------------->
+				<div class="sprachumschaltung">
+				<button class="win-button sprachbutton" id="screenbutton" onclick="onscreenbuttonpressed()">
+				<i id="expand" class="fa fa-expand"></i>
+				</button>
+				<button class="win-button sprachbutton activesprache" id="englischbutton" onclick="onenglischbuttonpressed()">
+				En
+				</button>
+				<button class="win-button sprachbutton" id="deutschbutton" onclick="ondeutschbuttonpressed()">
+				De
+				</button>
+				<button class="win-button sprachbutton" id="spanischbutton" onclick="onspanischbuttonpressed()">
+				Webs.
+				</button>
+				<select class="win-dropdown" id="auswahl">
+					<option selected="selected" value="Worker 1">Worker 1</option>
+					<option value="Worker 2">Worker 2</option>
+					<option value="Worker 3">Worker 3</option>
+				</select>				
+				</div>
+				
+				<div class="datumtext">
+				07.09.2015 <br>
+				16:12:15
+				</div>
+<!-------------------------------------------------NAV Rechts---------------------------------------------->
+				<div class="navrechts">
+				<button class="win-button navbutton parallelogram buttonrechts activerechts" id="thirdbutton" icon="win-home" onclick="onthirdbuttonpressed()">
+				<div class="buttontext">
+				
+				<i class="fa fa-globe fa-lg"></i>
+				
+				</div>
+				</button>
+				<button class="win-button navbutton parallelogram buttonrechts" id="fourthbutton" icon="win-home" onclick="onfourthbuttonpressed()">
+				<div class="buttontext">			
+				
+				<i class="fa fa-history fa-lg"></i>
+				
+				</div>
+				</button>
+				<button class="win-button navbutton parallelogram buttonrechts " id="fifthbutton" icon="win-home" onclick="onfifthbuttonpressed()">
+				<div class="buttontext" id="letztertext">
+				<i class="fa fa-bell fa-lg"></i>
+				</div>
+				</button>
+				</div>
+		</nav>		
+<!-------------------Inhalt Home------------------------------------------------------>
+		<main class="win-h3">		
+		<div class="seiteninhalt">
+			<table class="toggle" id="ersteseite">
+						<tr class="border">
+							<td>
+								Oberbieber
+							</td>
+							<td class="verticalstacking">
+								<div id="wifiToggle" class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Nacht', checked: true, onchange: toggleWifi}">
+								</div>								
+							</td>
+							<td>
+								<div class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Abend', onchange: toggleWifi}">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Gladbach
+							</td>
+							<td>
+								<div class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Nacht', onchange: toggleWifi}">
+								</div>
+							</td>
+							<td>
+								<div class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Abend', onchange: toggleWifi}">
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								Heimbach
+							</td>
+							<td>
+								<div class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Nacht', onchange: toggleWifi}">
+								</div>
+							</td>
+							<td>
+								<div class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Abend', onchange: toggleWifi}">
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								Neuwied
+							</td>
+							<td>
+								<div class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Nacht', checked: true, disabled: true, onchange: toggleWifi}">
+								</div>
+							</td>
+							<td>
+								<div class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Abend', checked: true, disabled: true, onchange: toggleWifi}">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Engers
+							</td>
+							<td class="verticalstacking">
+								<div id="wifiToggle" class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Nacht', onchange: toggleWifi, onchange: toggleWifi}">
+								</div>								
+							</td>
+							<td>
+								<div class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Abend', onchange: toggleWifi}">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Block
+							</td>
+							<td>
+								<div class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Nacht', onchange: toggleWifi}">
+								</div>
+							</td>
+							<td>
+								<div class="verdoppeln" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Abend', onchange: toggleWifi}">
+								</div>
+							</td>
+						</tr>
+
+						
+			</table>
+			</div>
+<!-------------------Inhalt Erste Seite------------------------------------------------------>		
+			<div class="flyout seiteninhalt disabled" id="zweiteseite">
+			
+					<p>Click the 'Buy' button to launch the purchase confirmation flyout.</p>
+					<button class="win-button action verdoppeln" id="buyButton">Buy</button>
+					<br /><br />
+
+					<!-- Scenario Controls -->
+					<div id="confirmFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Confirm purchase flyout}">
+						<div>Your account will be charged $252.</div>
+						<button class="win-button verdoppeln" id="confirmButton">Complete Order</button>
+					</div>
+
+					<div id="status"></div>
+
+			</div>	
+<!-------------------Inhalt Zweite Seite------------------------------------------------------>		
+			<div class="seiteninhalt disabled" id="dritteseite">
+			
+					Hello from the third site
+					<div id="listView" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource:myCellSpanningData.dataSource, itemTemplate: MyCellSoanningJSTemplate, selectionMode: 'none', tapBehavior: 'none', layout:{groupInfo:groupInfo, itemInfo: itemInfo, type: WinJS.UI.CellSpanningLayout}}">
+					</div>
+					
+			</div>
+		
+<!-------------------Inhalt Zweite Seite------------------------------------------------------>
+			<div class="seiteninhalt disabled" id="vierteseite">
+			
+					Hello from the last site
+					<div id="listView" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource:myCellSpanningData.dataSource, itemTemplate: MyCellSoanningJSTemplate, selectionMode: 'none', tapBehavior: 'none', layout:{groupInfo:groupInfo, itemInfo: itemInfo, type: WinJS.UI.CellSpanningLayout}}">
+					
+					</div>
+			</div>
+</main>
+<!-------------------Seitenbar ------------------------------------------------------>				
+		<aside>
+		<div class="sidebar" id="sidebar1">
+			<h1 class="win-h1">
+			Sidebar 1
+			</h1>
+			<p id="paragraph">
+			Hello
+			</p>
+		</div>
+		<div class="sidebar disabled" id="sidebar2">
+			<h3 class="win-h3">
+			Sidebar 2<br>
+			Sidebar 2.1
+			<h3>
+		</div>
+		<div class="siderbar disabled" id="sidebar3">
+			<h4 class="win-h4">
+			Sidebar 3<br>
+			Sidebar 3.1<br>
+			Sidebar 3.2
+			<h4>
+		</div>
+		</aside>
+	</div>	
+</body>
