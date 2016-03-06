@@ -1,11 +1,15 @@
-﻿//var http = require('http');
-//var port = process.env.port || 1337;
-var connect = require('connect');
-var serveStatic = require('serve-static');
-connect().use(serveStatic('\Website\index.htm')).listen(8090);
+﻿var ws = require("nodejs-websocket")
 
-//http.createServer(function (req, res) {
+// Scream server example: "hi" -> "HI!!!" 
+var server = ws.createServer(function (conn) {
+    console.log("New connection")
 
-//    res.writeHead(200, { 'Content-Type': 'text/plain' });
-//    //res.end('Hello Worlds\n');
-//}).listen(port);
+    conn.on("text", function (str) {
+        console.log("Received " + str)
+        conn.sendText(str.toUpperCase() + "!!!")
+    })
+    conn.on("close", function (code, reason) {
+        console.log("Connection closed")
+    })
+
+}).listen(8001)
